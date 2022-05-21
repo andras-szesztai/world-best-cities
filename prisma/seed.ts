@@ -1,8 +1,5 @@
-import { PrismaClient } from '@prisma/client'
-
 import data from '../data/cities.json'
-
-const prisma = new PrismaClient()
+import prisma from '../lib/prisma'
 
 const run = async () => {
     await Promise.all(
