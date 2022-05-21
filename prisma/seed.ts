@@ -1,5 +1,5 @@
-import data from '../data/cities.json'
-import prisma from '../lib/prisma'
+import data from 'data/cities.json'
+import prisma from './prisma'
 
 const run = async () => {
     await Promise.all(

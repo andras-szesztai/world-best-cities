@@ -1,10 +1,12 @@
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -38,6 +40,46 @@ export type Query = {
   allCities: Array<Maybe<City>>;
 };
 
+export type GetAllCitiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllCitiesQuery = { __typename?: 'Query', allCities: Array<{ __typename?: 'City', name: string } | null> };
+
+
+export const GetAllCitiesDocument = gql`
+    query GetAllCities {
+  allCities {
+    name
+  }
+}
+    `;
+
+/**
+ * __useGetAllCitiesQuery__
+ *
+ * To run a query within a React component, call `useGetAllCitiesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllCitiesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllCitiesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAllCitiesQuery(baseOptions?: Apollo.QueryHookOptions<GetAllCitiesQuery, GetAllCitiesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAllCitiesQuery, GetAllCitiesQueryVariables>(GetAllCitiesDocument, options);
+      }
+export function useGetAllCitiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllCitiesQuery, GetAllCitiesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAllCitiesQuery, GetAllCitiesQueryVariables>(GetAllCitiesDocument, options);
+        }
+export type GetAllCitiesQueryHookResult = ReturnType<typeof useGetAllCitiesQuery>;
+export type GetAllCitiesLazyQueryHookResult = ReturnType<typeof useGetAllCitiesLazyQuery>;
+export type GetAllCitiesQueryResult = Apollo.QueryResult<GetAllCitiesQuery, GetAllCitiesQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {

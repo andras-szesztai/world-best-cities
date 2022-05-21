@@ -1,29 +1,7 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
-import prisma from '../../lib/prisma'
 
-import { Resolvers } from '../../types/generated/graphql'
-
-const typeDefs = gql`
-    type City {
-        id: Int!
-        name: String!
-        people: Int!
-        planet: Int!
-        profit: Int!
-        overall: Int!
-        country: String!
-        continent: String!
-    }
-    type Query {
-        allCities: [City]!
-    }
-`
-
-const resolvers: Resolvers = {
-    Query: {
-        allCities: () => prisma.city.findMany(),
-    },
-}
+import { typeDefs } from 'schemas'
+import { resolvers } from 'resolvers'
 
 const server = new ApolloServer({ typeDefs, resolvers })
 

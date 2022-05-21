@@ -10,10 +10,13 @@
     "generate-types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.4",
     "@prisma/client": "3.14.0",
+    "@types/lodash": "^4.14.182",
     "apollo-server": "^3.7.0",
     "apollo-server-micro": "^2.25.3",
     "graphql": "^16.5.0",
+    "lodash": "^4.17.21",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"
@@ -25,9 +28,11 @@
     "@graphql-codegen/typescript-operations": "2.4.0",
     "@graphql-codegen/typescript-react-apollo": "3.2.14",
     "@graphql-codegen/typescript-resolvers": "^2.6.4",
+    "@types/graphql": "^14.5.0",
     "@types/node": "17.0.35",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.4",
+    "apollo": "^2.34.0",
     "eslint": "8.16.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.6",
