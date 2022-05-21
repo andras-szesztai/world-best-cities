@@ -1,7 +1,8 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
 import prisma from '../../lib/prisma'
 
-// Construct a schema using GraphQL schema language
+import { Resolvers } from '../../types/generated/graphql'
+
 const typeDefs = gql`
     type City {
         id: Int!
@@ -18,7 +19,7 @@ const typeDefs = gql`
     }
 `
 
-const resolvers = {
+const resolvers: Resolvers = {
     Query: {
         allCities: () => prisma.city.findMany(),
     },
