@@ -1,0 +1,902 @@
+[
+  {
+    "city": "Zurich",
+    "people": 27,
+    "planet": 1,
+    "profit": 5,
+    "overall": 1,
+    "country": "Switzerland",
+    "continent": "Europe"
+  },
+  {
+    "city": "Singapore",
+    "people": 48,
+    "planet": 12,
+    "profit": 1,
+    "overall": 2,
+    "country": "Singapore",
+    "continent": "Asia"
+  },
+  {
+    "city": "Stockholm",
+    "people": 14,
+    "planet": 2,
+    "profit": 10,
+    "overall": 3,
+    "country": "Sweden",
+    "continent": "Europe"
+  },
+  {
+    "city": "Vienna",
+    "people": 4,
+    "planet": 4,
+    "profit": 14,
+    "overall": 4,
+    "country": "Austria",
+    "continent": "Europe"
+  },
+  {
+    "city": "London",
+    "people": 37,
+    "planet": 9,
+    "profit": 3,
+    "overall": 5,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "Frankfurt",
+    "people": 16,
+    "planet": 5,
+    "profit": 23,
+    "overall": 6,
+    "country": "Germany",
+    "continent": "Europe"
+  },
+  {
+    "city": "Seoul",
+    "people": 1,
+    "planet": 26,
+    "profit": 18,
+    "overall": 7,
+    "country": "South Korea",
+    "continent": "Asia"
+  },
+  {
+    "city": "Hamburg",
+    "people": 3,
+    "planet": 10,
+    "profit": 25,
+    "overall": 8,
+    "country": "Germany",
+    "continent": "Europe"
+  },
+  {
+    "city": "Prague",
+    "people": 6,
+    "planet": 31,
+    "profit": 7,
+    "overall": 9,
+    "country": "Czechia",
+    "continent": "Europe"
+  },
+  {
+    "city": "Munich",
+    "people": 8,
+    "planet": 24,
+    "profit": 11,
+    "overall": 10,
+    "country": "Germany",
+    "continent": "Europe"
+  },
+  {
+    "city": "Amsterdam",
+    "people": 7,
+    "planet": 19,
+    "profit": 16,
+    "overall": 11,
+    "country": "Netherlands",
+    "continent": "Europe"
+  },
+  {
+    "city": "Geneva",
+    "people": 30,
+    "planet": 3,
+    "profit": 42,
+    "overall": 12,
+    "country": "Switzerland",
+    "continent": "Europe"
+  },
+  {
+    "city": "Edinburgh",
+    "people": 38,
+    "planet": 22,
+    "profit": 6,
+    "overall": 13,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "Copenhagen",
+    "people": 24,
+    "planet": 13,
+    "profit": 17,
+    "overall": 14,
+    "country": "Denmark",
+    "continent": "Europe"
+  },
+  {
+    "city": "Paris",
+    "people": 20,
+    "planet": 32,
+    "profit": 9,
+    "overall": 15,
+    "country": "France",
+    "continent": "Europe"
+  },
+  {
+    "city": "Hong Kong",
+    "people": 81,
+    "planet": 29,
+    "profit": 2,
+    "overall": 16,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Berlin",
+    "people": 5,
+    "planet": 16,
+    "profit": 32,
+    "overall": 17,
+    "country": "Germany",
+    "continent": "Europe"
+  },
+  {
+    "city": "Canberra",
+    "people": 17,
+    "planet": 25,
+    "profit": 20,
+    "overall": 18,
+    "country": "Australia",
+    "continent": "Oceania"
+  },
+  {
+    "city": "Rotterdam",
+    "people": 2,
+    "planet": 17,
+    "profit": 46,
+    "overall": 19,
+    "country": "Netherlands",
+    "continent": "Europe"
+  },
+  {
+    "city": "Madrid",
+    "people": 18,
+    "planet": 11,
+    "profit": 34,
+    "overall": 20,
+    "country": "Spain",
+    "continent": "Europe"
+  },
+  {
+    "city": "Sydney",
+    "people": 25,
+    "planet": 8,
+    "profit": 35,
+    "overall": 21,
+    "country": "Australia",
+    "continent": "Oceania"
+  },
+  {
+    "city": "Rome",
+    "people": 33,
+    "planet": 7,
+    "profit": 49,
+    "overall": 22,
+    "country": "Italy",
+    "continent": "Europe"
+  },
+  {
+    "city": "Vancouver",
+    "people": 23,
+    "planet": 18,
+    "profit": 29,
+    "overall": 23,
+    "country": "Canada",
+    "continent": "North America"
+  },
+  {
+    "city": "Barcelona",
+    "people": 13,
+    "planet": 23,
+    "profit": 43,
+    "overall": 24,
+    "country": "Spain",
+    "continent": "Europe"
+  },
+  {
+    "city": "Manchester",
+    "people": 31,
+    "planet": 14,
+    "profit": 51,
+    "overall": 25,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "New York",
+    "people": 77,
+    "planet": 33,
+    "profit": 8,
+    "overall": 26,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Wellington",
+    "people": 50,
+    "planet": 6,
+    "profit": 58,
+    "overall": 27,
+    "country": "New Zealand",
+    "continent": "Oceania"
+  },
+  {
+    "city": "Montreal",
+    "people": 10,
+    "planet": 27,
+    "profit": 54,
+    "overall": 28,
+    "country": "Canada",
+    "continent": "North America"
+  },
+  {
+    "city": "Antwerp",
+    "people": 11,
+    "planet": 37,
+    "profit": 40,
+    "overall": 29,
+    "country": "Belgium",
+    "continent": "Europe"
+  },
+  {
+    "city": "Brisbane",
+    "people": 21,
+    "planet": 41,
+    "profit": 30,
+    "overall": 30,
+    "country": "Australia",
+    "continent": "Oceania"
+  },
+  {
+    "city": "Birmingham",
+    "people": 28,
+    "planet": 15,
+    "profit": 60,
+    "overall": 31,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "Melbourne",
+    "people": 22,
+    "planet": 49,
+    "profit": 26,
+    "overall": 32,
+    "country": "Australia",
+    "continent": "Oceania"
+  },
+  {
+    "city": "Toronto",
+    "people": 40,
+    "planet": 28,
+    "profit": 38,
+    "overall": 33,
+    "country": "Canada",
+    "continent": "North America"
+  },
+  {
+    "city": "Boston",
+    "people": 41,
+    "planet": 45,
+    "profit": 22,
+    "overall": 34,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Dublin",
+    "people": 39,
+    "planet": 39,
+    "profit": 39,
+    "overall": 35,
+    "country": "Ireland",
+    "continent": "Europe"
+  },
+  {
+    "city": "Glasgow",
+    "people": 42,
+    "planet": 20,
+    "profit": 64,
+    "overall": 36,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "Warsaw",
+    "people": 15,
+    "planet": 54,
+    "profit": 36,
+    "overall": 37,
+    "country": "Poland",
+    "continent": "Europe"
+  },
+  {
+    "city": "Leeds",
+    "people": 26,
+    "planet": 21,
+    "profit": 69,
+    "overall": 38,
+    "country": "U.K.",
+    "continent": "Europe"
+  },
+  {
+    "city": "San Francisco",
+    "people": 54,
+    "planet": 53,
+    "profit": 12,
+    "overall": 39,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Brussels",
+    "people": 12,
+    "planet": 34,
+    "profit": 66,
+    "overall": 40,
+    "country": "Belgium",
+    "continent": "Europe"
+  },
+  {
+    "city": "Macau",
+    "people": 69,
+    "planet": 51,
+    "profit": 15,
+    "overall": 41,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Milan",
+    "people": 34,
+    "planet": 36,
+    "profit": 57,
+    "overall": 42,
+    "country": "Italy",
+    "continent": "Europe"
+  },
+  {
+    "city": "Seattle",
+    "people": 61,
+    "planet": 35,
+    "profit": 33,
+    "overall": 43,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Washington",
+    "people": 67,
+    "planet": 48,
+    "profit": 21,
+    "overall": 44,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Tokyo",
+    "people": 44,
+    "planet": 50,
+    "profit": 28,
+    "overall": 45,
+    "country": "Japan",
+    "continent": "Asia"
+  },
+  {
+    "city": "Lisbon",
+    "people": 29,
+    "planet": 43,
+    "profit": 61,
+    "overall": 46,
+    "country": "Portugal",
+    "continent": "Europe"
+  },
+  {
+    "city": "Lyon",
+    "people": 19,
+    "planet": 40,
+    "profit": 71,
+    "overall": 47,
+    "country": "France",
+    "continent": "Europe"
+  },
+  {
+    "city": "Taipei",
+    "people": 32,
+    "planet": 71,
+    "profit": 27,
+    "overall": 48,
+    "country": "Taiwan",
+    "continent": "Asia"
+  },
+  {
+    "city": "Denver",
+    "people": 47,
+    "planet": 64,
+    "profit": 24,
+    "overall": 49,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Los Angeles",
+    "people": 49,
+    "planet": 60,
+    "profit": 47,
+    "overall": 50,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Philadelphia",
+    "people": 66,
+    "planet": 46,
+    "profit": 55,
+    "overall": 51,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Dubai",
+    "people": 55,
+    "planet": 96,
+    "profit": 4,
+    "overall": 52,
+    "country": "UAE",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Baltimore",
+    "people": 80,
+    "planet": 42,
+    "profit": 52,
+    "overall": 53,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Miami",
+    "people": 89,
+    "planet": 47,
+    "profit": 41,
+    "overall": 54,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Kuala Lumpur",
+    "people": 53,
+    "planet": 84,
+    "profit": 19,
+    "overall": 55,
+    "country": "Malaysia",
+    "continent": "Asia"
+  },
+  {
+    "city": "Dallas",
+    "people": 82,
+    "planet": 59,
+    "profit": 31,
+    "overall": 56,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Moscow",
+    "people": 35,
+    "planet": 87,
+    "profit": 44,
+    "overall": 57,
+    "country": "Russia",
+    "continent": "Europe"
+  },
+  {
+    "city": "Abu Dhabi",
+    "people": 60,
+    "planet": 95,
+    "profit": 13,
+    "overall": 58,
+    "country": "UAE",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Houston",
+    "people": 79,
+    "planet": 68,
+    "profit": 37,
+    "overall": 59,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Chicago",
+    "people": 74,
+    "planet": 67,
+    "profit": 45,
+    "overall": 60,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "New Orleans",
+    "people": 93,
+    "planet": 44,
+    "profit": 59,
+    "overall": 61,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Pittsburgh",
+    "people": 51,
+    "planet": 73,
+    "profit": 63,
+    "overall": 62,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Atlanta",
+    "people": 70,
+    "planet": 78,
+    "profit": 48,
+    "overall": 63,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Shenzhen",
+    "people": 73,
+    "planet": 66,
+    "profit": 56,
+    "overall": 64,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Indianapolis",
+    "people": 83,
+    "planet": 61,
+    "profit": 62,
+    "overall": 65,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Athens",
+    "people": 52,
+    "planet": 52,
+    "profit": 72,
+    "overall": 66,
+    "country": "Greece",
+    "continent": "Europe"
+  },
+  {
+    "city": "Bangkok",
+    "people": 64,
+    "planet": 79,
+    "profit": 53,
+    "overall": 67,
+    "country": "Thailand",
+    "continent": "Asia"
+  },
+  {
+    "city": "Tampa",
+    "people": 84,
+    "planet": 56,
+    "profit": 70,
+    "overall": 68,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Detroit",
+    "people": 72,
+    "planet": 65,
+    "profit": 65,
+    "overall": 69,
+    "country": "U.S.",
+    "continent": "North America"
+  },
+  {
+    "city": "Kuwait City",
+    "people": 36,
+    "planet": 89,
+    "profit": 68,
+    "overall": 70,
+    "country": "Kuwait",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Santiago",
+    "people": 85,
+    "planet": 57,
+    "profit": 76,
+    "overall": 71,
+    "country": "Chile",
+    "continent": "South America"
+  },
+  {
+    "city": "Doha",
+    "people": 57,
+    "planet": 98,
+    "profit": 50,
+    "overall": 72,
+    "country": "Qatar",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Beijing",
+    "people": 45,
+    "planet": 97,
+    "profit": 67,
+    "overall": 73,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Shanghai",
+    "people": 43,
+    "planet": 91,
+    "profit": 77,
+    "overall": 74,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Muscat",
+    "people": 9,
+    "planet": 88,
+    "profit": 85,
+    "overall": 75,
+    "country": "Oman",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Riyadh",
+    "people": 56,
+    "planet": 82,
+    "profit": 79,
+    "overall": 76,
+    "country": "Saudi Arabia",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Istanbul",
+    "people": 90,
+    "planet": 74,
+    "profit": 75,
+    "overall": 77,
+    "country": "Turkey",
+    "continent": "Europe"
+  },
+  {
+    "city": "Guangzhou",
+    "people": 65,
+    "planet": 80,
+    "profit": 78,
+    "overall": 78,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Sao Paulo",
+    "people": 97,
+    "planet": 30,
+    "profit": 84,
+    "overall": 79,
+    "country": "Brazil",
+    "continent": "South America"
+  },
+  {
+    "city": "Buenos Aires",
+    "people": 88,
+    "planet": 63,
+    "profit": 82,
+    "overall": 80,
+    "country": "Argentina",
+    "continent": "South America"
+  },
+  {
+    "city": "Jeddah",
+    "people": 59,
+    "planet": 81,
+    "profit": 81,
+    "overall": 81,
+    "country": "Saudi Arabia",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Rio de Janeiro",
+    "people": 95,
+    "planet": 38,
+    "profit": 86,
+    "overall": 82,
+    "country": "Brazil",
+    "continent": "South America"
+  },
+  {
+    "city": "Lima",
+    "people": 91,
+    "planet": 94,
+    "profit": 74,
+    "overall": 83,
+    "country": "Peru",
+    "continent": "South America"
+  },
+  {
+    "city": "Mexico City",
+    "people": 96,
+    "planet": 58,
+    "profit": 83,
+    "overall": 84,
+    "country": "Mexico",
+    "continent": "North America"
+  },
+  {
+    "city": "Tianjin",
+    "people": 68,
+    "planet": 77,
+    "profit": 87,
+    "overall": 85,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Amman",
+    "people": 71,
+    "planet": 55,
+    "profit": 97,
+    "overall": 86,
+    "country": "Jordan",
+    "continent": "Middle East"
+  },
+  {
+    "city": "Hanoi",
+    "people": 46,
+    "planet": 76,
+    "profit": 94,
+    "overall": 87,
+    "country": "Vietnam",
+    "continent": "Asia"
+  },
+  {
+    "city": "Jakarta",
+    "people": 58,
+    "planet": 85,
+    "profit": 88,
+    "overall": 88,
+    "country": "Indonesia",
+    "continent": "Asia"
+  },
+  {
+    "city": "Chennai",
+    "people": 76,
+    "planet": 69,
+    "profit": 95,
+    "overall": 89,
+    "country": "India",
+    "continent": "Asia"
+  },
+  {
+    "city": "Johannesburg",
+    "people": 99,
+    "planet": 72,
+    "profit": 73,
+    "overall": 90,
+    "country": "South Africa",
+    "continent": "Africa"
+  },
+  {
+    "city": "Bengaluru",
+    "people": 75,
+    "planet": 62,
+    "profit": 99,
+    "overall": 91,
+    "country": "India",
+    "continent": "Asia"
+  },
+  {
+    "city": "Mumbai",
+    "people": 86,
+    "planet": 75,
+    "profit": 93,
+    "overall": 92,
+    "country": "India",
+    "continent": "Asia"
+  },
+  {
+    "city": "Chengdu",
+    "people": 63,
+    "planet": 92,
+    "profit": 92,
+    "overall": 93,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Wuhan",
+    "people": 62,
+    "planet": 99,
+    "profit": 89,
+    "overall": 94,
+    "country": "China",
+    "continent": "Asia"
+  },
+  {
+    "city": "Cape Town",
+    "people": 100,
+    "planet": 70,
+    "profit": 80,
+    "overall": 95,
+    "country": "South Africa",
+    "continent": "Africa"
+  },
+  {
+    "city": "Manila",
+    "people": 94,
+    "planet": 86,
+    "profit": 91,
+    "overall": 96,
+    "country": "Philippines",
+    "continent": "Asia"
+  },
+  {
+    "city": "New Delhi",
+    "people": 87,
+    "planet": 90,
+    "profit": 96,
+    "overall": 97,
+    "country": "India",
+    "continent": "Asia"
+  },
+  {
+    "city": "Nairobi",
+    "people": 98,
+    "planet": 83,
+    "profit": 90,
+    "overall": 98,
+    "country": "Kenya",
+    "continent": "Africa"
+  },
+  {
+    "city": "Cairo",
+    "people": 92,
+    "planet": 93,
+    "profit": 98,
+    "overall": 99,
+    "country": "Egypt",
+    "continent": "Africa"
+  },
+  {
+    "city": "Kolkata",
+    "people": 78,
+    "planet": 100,
+    "profit": 100,
+    "overall": 100,
+    "country": "India",
+    "continent": "Asia"
+  }
+]
