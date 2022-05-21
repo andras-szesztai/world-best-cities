@@ -1,38 +1,26 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
-
-// This data will be returned by our test endpoint
-const products = [
-    {
-        id: 1,
-        name: 'Cookie',
-        price: 300,
-    },
-    {
-        id: 2,
-        name: 'Brownie',
-        price: 350,
-    },
-]
+import prisma from '../../lib/prisma'
 
 // Construct a schema using GraphQL schema language
 const typeDefs = gql`
-    type Product {
-        id: Int
-        name: String
-        price: Int
+    type City {
+        id: Int!
+        name: String!
+        people: Int!
+        planet: Int!
+        profit: Int!
+        overall: Int!
+        country: String!
+        continent: String!
     }
-
     type Query {
-        products: [Product]
+        allCities: [City]!
     }
 `
 
-// Provide resolver functions for your schema fields
 const resolvers = {
     Query: {
-        products: () => {
-            return products
-        },
+        allCities: () => prisma.city.findMany(),
     },
 }
 
