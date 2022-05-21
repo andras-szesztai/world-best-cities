@@ -1,3 +1,3 @@
-import { City } from './city'
+import { City } from './City'
 
 export const typeDefs = [City]
