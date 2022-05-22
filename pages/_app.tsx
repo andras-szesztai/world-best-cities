@@ -3,8 +3,13 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 import 'styles/globals.css'
 
-const client = new ApolloClient({
-    uri: '/api/graphql',
+const baseURL =
+    process.env.NODE_ENV !== 'production'
+        ? 'http://localhost:3000'
+        : 'http://world-best-cities.vercel.app'
+
+export const client = new ApolloClient({
+    uri: `${baseURL}/api/graphql`,
     cache: new InMemoryCache(),
 })
 

@@ -1,23 +1,36 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 
-import styles from 'styles/Home.module.css'
-import { useGetAllCitiesQuery } from 'types/generated/graphql'
+import {
+    useGetAllCitiesQuery,
+    GetAllCitiesQueryHookResult,
+    GetAllCitiesQuery,
+} from 'types/generated/graphql'
 
-const Home: NextPage = () => {
-    const { data, loading } = useGetAllCitiesQuery()
+import { client } from './_app'
+
+type AllCities = GetAllCitiesQuery['allCities']
+interface StaticProps {
+    allCities: AllCities
+}
+interface Props extends StaticProps {}
+
+const Home = ({ allCities }: Props) => {
     return (
-        <div className={styles.container}>
-            {loading && 'Loading...'}
-            {data?.allCities.map((city) => (
+        <div>
+            {allCities.map((city) => (
                 <div key={city.name}>{city.name}</div>
             ))}
         </div>
     )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+    const { data } = await client.query<StaticProps>({
+        query: GET_ALL_CITIES,
+    })
     return {
-        props: {}, // will be passed to the page component as props
+        props: { allCities: data.allCities },
     }
 }
 
