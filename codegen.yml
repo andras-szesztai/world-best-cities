@@ -3,8 +3,6 @@ schema: 'http://localhost:3000/api/graphql'
 documents: operations/**/*.ts
 generates:
     types/generated/graphql.tsx:
-        config:
-            useIndexSignature: true
         plugins:
             - 'typescript'
             - 'typescript-operations'

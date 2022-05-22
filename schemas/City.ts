@@ -12,6 +12,6 @@ export const City = gql`
         continent: String!
     }
     type Query {
-        allCities: [City]!
+        allCities: [City!]!
     }
 `
