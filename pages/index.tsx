@@ -1,6 +1,7 @@
-import type { GetStaticProps, NextPage } from 'next'
-import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
+import type { GetStaticProps } from 'next'
 
+import { CountryCard } from 'components/organisms/CountryCard'
+import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GetAllCitiesQuery } from 'types/generated/graphql'
 
 import { client } from './_app'
@@ -16,7 +17,7 @@ const Home = ({ allCities }: Props) => {
     return (
         <div>
             {allCities.map((city) => (
-                <div key={city.name}>{city.name}</div>
+                <CountryCard key={city.name} city={city} />
             ))}
         </div>
     )

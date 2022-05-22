@@ -4,6 +4,12 @@ export const GET_ALL_CITIES = gql`
     query GetAllCities {
         allCities {
             name
+            people
+            planet
+            profit
+            overall
+            country
+            continent
         }
     }
 `
