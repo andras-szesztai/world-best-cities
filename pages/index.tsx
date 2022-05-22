@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next'
 
-import { CountryCard } from 'components/organisms/CityCard'
+import { CityCard } from 'components/organisms/CityCard'
+import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { AllCities } from 'types/city'
 
@@ -13,11 +14,11 @@ interface Props extends StaticProps {}
 
 const Home = ({ allCities }: Props) => {
     return (
-        <div>
+        <CityCardsContainer>
             {allCities.map((city) => (
-                <CountryCard key={city.name} city={city} />
+                <CityCard key={city.name} city={city} />
             ))}
-        </div>
+        </CityCardsContainer>
     )
 }
 
