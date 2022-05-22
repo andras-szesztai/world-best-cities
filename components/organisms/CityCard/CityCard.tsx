@@ -1,15 +1,31 @@
 import { pick } from 'lodash'
 
 import { SummaryChart } from 'components/molecules/SummaryChart'
-import { citySummaryChartKeys } from 'types/city'
+import { metrics } from 'constants/metric'
+import { designTokens } from 'styles/designTokens'
+import { Continents } from 'types/continent'
 
 import { Props } from './types'
-import { Container } from './styles'
+import { CardTitle, Container, Rank, TitleContainer } from './styles'
+
+const continentMapper: Record<string, Continents> = {
+    'North America': 'northAmerica',
+    'South America': 'southAmerica',
+    Europe: 'europe',
+    Asia: 'asia',
+    Oceania: 'oceania',
+    'Middle East': 'middleEast',
+    Africa: 'africa',
+}
 
 const CityCard = ({ city }: Props) => (
-    <Container>
-        #{city.overall} {city.name}
-        <SummaryChart data={pick(city, citySummaryChartKeys)} />
+    <Container color={designTokens.color[continentMapper[city.continent]]}>
+        <TitleContainer>
+            <Rank>#{city.overall}</Rank>
+            <CardTitle>{city.name}</CardTitle>
+        </TitleContainer>
+
+        <SummaryChart data={pick(city, metrics)} />
     </Container>
 )
 

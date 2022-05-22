@@ -24,11 +24,11 @@ export const designTokens = {
         profit: '#12AA5A',
         northAmerica: '#F2724F',
         europe: '#fec72f',
-        asia: '#B6DFCD',
-        oceania: '#A29DCD',
-        middleEast: '#9BD1E5',
-        africa: '#FFCFD2',
-        southAmerica: '#FAF3DD',
+        asia: '#4AD38E',
+        oceania: '#8C89CE',
+        middleEast: '#61C2D8',
+        africa: '#DD7A89',
+        southAmerica: '#EDCC72',
     },
     borderRadius: {
         sm: 2,
@@ -40,4 +40,14 @@ export const designTokens = {
         md: '8px 8px 0px 0px #000',
         lg: '12px 12px 0px 0px #000',
     },
-}
+    fontSize: {
+        sm: '.75rem',
+        base: '1rem',
+        md: '1.5rem',
+        lg: '2rem',
+    },
+    fontWeight: {
+        regular: 400,
+        bold: 700,
+    },
+} as const

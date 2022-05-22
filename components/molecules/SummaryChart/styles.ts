@@ -4,14 +4,18 @@ import { designTokens } from 'styles/designTokens'
 
 export const Container = styled.div`
     position: relative;
-    width: ${designTokens.space['4xl']}px;
+    width: ${designTokens.space['3xl']}px;
+    min-width: ${designTokens.space['3xl']}px;
     height: 100%;
     display: flex;
     align-items: flex-end;
     gap: ${designTokens.space.xs}px;
 `
 
-export const Bar = styled.div<{ color: string; height: number }>`
+export const Bar = styled.div<{
+    color: string
+    height: number
+}>`
     flex: 1;
     height: ${({ height }) => height}%;
     background: ${({ color }) => color};
