@@ -1,15 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 
-import {
-    useGetAllCitiesQuery,
-    GetAllCitiesQueryHookResult,
-    GetAllCitiesQuery,
-} from 'types/generated/graphql'
+import { GetAllCitiesQuery } from 'types/generated/graphql'
 
 import { client } from './_app'
 
 type AllCities = GetAllCitiesQuery['allCities']
+
 interface StaticProps {
     allCities: AllCities
 }
