@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.4",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@prisma/client": "3.14.0",
     "@types/lodash": "^4.14.182",
     "apollo-server": "^3.7.0",
