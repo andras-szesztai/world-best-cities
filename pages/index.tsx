@@ -2,11 +2,9 @@ import type { GetStaticProps } from 'next'
 
 import { CountryCard } from 'components/organisms/CountryCard'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
-import { GetAllCitiesQuery } from 'types/generated/graphql'
+import { AllCities } from 'types/city'
 
 import { client } from './_app'
-
-type AllCities = GetAllCitiesQuery['allCities']
 
 interface StaticProps {
     allCities: AllCities

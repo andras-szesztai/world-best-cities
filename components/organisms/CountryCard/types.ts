@@ -1,5 +1,4 @@
-import { GetAllCitiesQuery } from 'types/generated/graphql'
-
+import { FullCity } from 'types/city'
 export interface Props {
-    city: GetAllCitiesQuery['allCities'][number]
+    city: FullCity
 }
