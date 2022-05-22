@@ -115,6 +115,16 @@ export type GetAllCitiesQueryResult = Apollo.QueryResult<
     GetAllCitiesQueryVariables
 >
 
+export interface PossibleTypesResultData {
+    possibleTypes: {
+        [key: string]: string[]
+    }
+}
+const result: PossibleTypesResultData = {
+    possibleTypes: {},
+}
+export default result
+
 export type ResolverTypeWrapper<T> = Promise<T> | T
 
 export type ResolverWithResolve<TResult, TParent, TContext, TArgs> = {
