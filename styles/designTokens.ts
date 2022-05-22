@@ -45,6 +45,7 @@ export const designTokens = {
         base: '1rem',
         md: '1.5rem',
         lg: '2rem',
+        xl: '3rem',
     },
     fontWeight: {
         regular: 400,

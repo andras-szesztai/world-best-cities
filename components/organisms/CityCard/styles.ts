@@ -13,7 +13,7 @@ export const Container = styled.div<{ color: string }>`
     padding: ${designTokens.space.sm}px;
     border-radius: ${designTokens.borderRadius.lg}px;
     border: ${designTokens.strokeWidth.lg}px solid ${designTokens.color.black};
-    box-shadow: ${designTokens.boxShadow.sm};
+    box-shadow: ${designTokens.boxShadow.md};
 `
 
 export const TitleContainer = styled.div`
@@ -25,13 +25,14 @@ export const TitleContainer = styled.div`
 `
 
 export const Rank = styled.span`
-    font-size: ${designTokens.fontSize.lg};
-    line-height: 1;
+    font-size: 3rem;
+    line-height: 0.75;
+    font-weight: ${designTokens.fontWeight.bold};
 `
 
 export const CardTitle = styled.h2`
     font-size: ${designTokens.fontSize.md};
-    font-weight: ${designTokens.fontWeight.bold};
+    font-weight: ${designTokens.fontWeight.regular};
     margin: 0;
     line-height: 1;
 `
