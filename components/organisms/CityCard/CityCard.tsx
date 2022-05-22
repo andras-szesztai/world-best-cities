@@ -5,11 +5,11 @@ import { CitySummaryChartKeys } from 'types/city'
 
 import { Props } from './types'
 
-const CountryCard = ({ city }: Props) => (
-  <div>
-    {city.name}
-    <SummaryChart data={pick(city, CitySummaryChartKeys)} />
-  </div>
+const CityCard = ({ city }: Props) => (
+    <div>
+        {city.name}
+        <SummaryChart data={pick(city, CitySummaryChartKeys)} />
+    </div>
 )
 
-export default CountryCard
+export default CityCard

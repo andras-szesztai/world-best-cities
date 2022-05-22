@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next'
 
-import { CountryCard } from 'components/organisms/CountryCard'
+import { CountryCard } from 'components/organisms/CityCard'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { AllCities } from 'types/city'
 
