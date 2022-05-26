@@ -3,15 +3,15 @@ import styled from '@emotion/styled'
 import { designTokens } from 'styles/designTokens'
 
 export const Container = styled.a<{ color: string }>`
-    height: ${designTokens.space['3xl']}px;
     display: flex;
     justify-content: space-between;
     position: relative;
     text-align: left;
-
     cursor: pointer;
+
     background-color: ${({ color }) => color};
 
+    height: ${designTokens.space['3xl']}px;
     padding: ${designTokens.space.sm}px;
     border-radius: ${designTokens.borderRadius.lg}px;
     border: ${designTokens.strokeWidth.lg}px solid ${designTokens.color.black};

@@ -21,7 +21,7 @@ const continentMapper: Record<string, Continents> = {
 }
 
 const CityCard = ({ city }: Props) => (
-    <Link href={`/${slugify(city.name)}`}>
+    <Link href={`/${slugify(city.name)}`} passHref>
         <Container color={designTokens.color[continentMapper[city.continent]]}>
             <TitleContainer>
                 <Rank>#{city.overall}</Rank>

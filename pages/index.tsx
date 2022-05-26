@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next'
+import Head from 'next/head'
 
 import { MainText } from 'components/molecules/MainText'
 import { CityCard } from 'components/organisms/CityCard'
@@ -6,9 +7,9 @@ import { LegendText } from 'components/atoms/LegendText'
 import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { AllCities } from 'types/city'
+import { designTokens } from 'styles/designTokens'
 
 import { client } from './_app'
-import { designTokens } from 'styles/designTokens'
 
 interface StaticProps {
     allCities: AllCities
@@ -18,6 +19,9 @@ interface Props extends StaticProps {}
 const Home = ({ allCities }: Props) => {
     return (
         <>
+            <Head>
+                <title>World's Best Cities</title>
+            </Head>
             <MainText
                 title="World's Best Cities"
                 subTitle={

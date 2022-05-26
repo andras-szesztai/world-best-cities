@@ -7,15 +7,18 @@ export const Container = styled.div`
     flex-direction: column;
     gap: ${designTokens.space.sm}px;
     padding: ${designTokens.space.sm}px;
+    padding-bottom: 0px;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
         gap: ${designTokens.space.md}px;
         padding: ${designTokens.space.md}px;
+        padding-bottom: 0px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
         padding: ${designTokens.space.lg}px;
         align-items: center;
+        padding-bottom: ${designTokens.space.sm}px;
     }
 `
 
