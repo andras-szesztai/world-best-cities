@@ -48,7 +48,7 @@ export const Rank = styled.span`
     }
 `
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled.h3`
     font-size: ${designTokens.fontSize.md};
     font-weight: ${designTokens.fontWeight.regular};
     margin: 0;
