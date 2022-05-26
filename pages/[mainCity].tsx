@@ -11,9 +11,7 @@ interface Props {
     city: City
 }
 
-const MainCityPage = ({ city }: Props) => {
-    return <div>{city?.name}</div>
-}
+const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const { data } = await client.query<{
