@@ -51,4 +51,9 @@ export const designTokens = {
         regular: 400,
         bold: 700,
     },
+    duration: {
+        sm: 200,
+        md: 400,
+        lg: 1000,
+    },
 } as const

@@ -4,9 +4,11 @@ import { SummaryChart } from 'components/molecules/SummaryChart'
 import { metrics } from 'constants/metric'
 import { designTokens } from 'styles/designTokens'
 import { Continents } from 'types/continent'
+import { slugify } from 'utils/string'
 
 import { Props } from './types'
 import { CardTitle, Container, Rank, TitleContainer } from './styles'
+import Link from 'next/link'
 
 const continentMapper: Record<string, Continents> = {
     'North America': 'northAmerica',
@@ -19,14 +21,15 @@ const continentMapper: Record<string, Continents> = {
 }
 
 const CityCard = ({ city }: Props) => (
-    <Container color={designTokens.color[continentMapper[city.continent]]}>
-        <TitleContainer>
-            <Rank>#{city.overall}</Rank>
-            <CardTitle>{city.name}</CardTitle>
-        </TitleContainer>
-
-        <SummaryChart data={pick(city, metrics)} />
-    </Container>
+    <Link href={`/${slugify(city.name)}`}>
+        <Container color={designTokens.color[continentMapper[city.continent]]}>
+            <TitleContainer>
+                <Rank>#{city.overall}</Rank>
+                <CardTitle>{city.name}</CardTitle>
+            </TitleContainer>
+            <SummaryChart data={pick(city, metrics)} />
+        </Container>
+    </Link>
 )
 
 export default CityCard
