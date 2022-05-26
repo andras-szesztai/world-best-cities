@@ -9,4 +9,5 @@ export const StyledSpan = styled.span<Pick<Props, 'color'>>`
     border-radius: ${designTokens.borderRadius.md}px;
     border: ${designTokens.strokeWidth.md}px solid ${designTokens.color.black};
     padding: 0 ${designTokens.space.xs}px;
+    box-shadow: ${designTokens.boxShadow.sm};
 `

@@ -9,4 +9,8 @@ export const Query: QueryResolvers<ResolverContext> = {
                 overall: 'asc',
             },
         }),
+    getCity: (_, { slug }, { db }) =>
+        db.city.findUnique({
+            where: { slug },
+        }),
 }

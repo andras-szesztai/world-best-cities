@@ -3,6 +3,7 @@ import { gql } from 'apollo-server-micro'
 export const City = gql`
     type City {
         id: Int!
+        slug: String!
         name: String!
         people: Int!
         planet: Int!
@@ -13,5 +14,6 @@ export const City = gql`
     }
     type Query {
         allCities: [City!]!
+        getCity(slug: String!): City
     }
 `

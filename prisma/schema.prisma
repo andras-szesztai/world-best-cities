@@ -14,6 +14,7 @@ model City {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String   @unique
+  slug      String   @unique
   people    Int
   planet    Int
   profit    Int

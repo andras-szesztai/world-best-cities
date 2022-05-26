@@ -4,7 +4,6 @@ import { SummaryChart } from 'components/molecules/SummaryChart'
 import { metrics } from 'constants/metric'
 import { designTokens } from 'styles/designTokens'
 import { Continents } from 'types/continent'
-import { slugify } from 'utils/string'
 
 import { Props } from './types'
 import { CardTitle, Container, Rank, TitleContainer } from './styles'
@@ -21,7 +20,7 @@ const continentMapper: Record<string, Continents> = {
 }
 
 const CityCard = ({ city }: Props) => (
-    <Link href={`/${slugify(city.name)}`} passHref>
+    <Link href={`/${city.slug}`} passHref>
         <Container color={designTokens.color[continentMapper[city.continent]]}>
             <TitleContainer>
                 <Rank>#{city.overall}</Rank>

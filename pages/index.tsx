@@ -41,7 +41,7 @@ const Home = ({ allCities }: Props) => {
                             text="economic"
                             color={designTokens.color.profit}
                         />{' '}
-                        factors.
+                        factors
                     </div>
                 }
             />

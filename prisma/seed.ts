@@ -1,10 +1,12 @@
-import data from 'data/cities.json'
+import data from '../data/cities.json'
+import { slugify } from '../utils/string'
+
 import prisma from './prisma'
 
 const run = async () => {
     await Promise.all(
         data
-            // .slice(0, 9)
+            .slice(28, 82)
             .map(
                 ({
                     city,
@@ -14,12 +16,13 @@ const run = async () => {
                     overall,
                     country,
                     continent,
-                }) =>
+                }: any) =>
                     prisma.city.upsert({
                         where: { name: city },
                         update: {},
                         create: {
                             name: city,
+                            slug: slugify(city),
                             people,
                             planet,
                             profit,

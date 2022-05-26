@@ -6,6 +6,7 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -33,23 +34,38 @@ export type City = {
   people: Scalars['Int'];
   planet: Scalars['Int'];
   profit: Scalars['Int'];
+  slug: Scalars['String'];
 };
 
 export type Query = {
   __typename?: 'Query';
   allCities: Array<City>;
+  getCity?: Maybe<City>;
+};
+
+
+export type QueryGetCityArgs = {
+  slug: Scalars['String'];
 };
 
 export type GetAllCitiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllCitiesQuery = { __typename?: 'Query', allCities: Array<{ __typename?: 'City', name: string, people: number, planet: number, profit: number, overall: number, country: string, continent: string }> };
+export type GetAllCitiesQuery = { __typename?: 'Query', allCities: Array<{ __typename?: 'City', name: string, slug: string, people: number, planet: number, profit: number, overall: number, country: string, continent: string }> };
+
+export type GetCityQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetCityQuery = { __typename?: 'Query', getCity?: { __typename?: 'City', name: string, people: number, planet: number, profit: number, overall: number, country: string, continent: string } | null };
 
 
 export const GetAllCitiesDocument = gql`
     query GetAllCities {
   allCities {
     name
+    slug
     people
     planet
     profit
@@ -86,6 +102,47 @@ export function useGetAllCitiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetAllCitiesQueryHookResult = ReturnType<typeof useGetAllCitiesQuery>;
 export type GetAllCitiesLazyQueryHookResult = ReturnType<typeof useGetAllCitiesLazyQuery>;
 export type GetAllCitiesQueryResult = Apollo.QueryResult<GetAllCitiesQuery, GetAllCitiesQueryVariables>;
+export const GetCityDocument = gql`
+    query GetCity($slug: String!) {
+  getCity(slug: $slug) {
+    name
+    people
+    planet
+    profit
+    overall
+    country
+    continent
+  }
+}
+    `;
+
+/**
+ * __useGetCityQuery__
+ *
+ * To run a query within a React component, call `useGetCityQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCityQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCityQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetCityQuery(baseOptions: Apollo.QueryHookOptions<GetCityQuery, GetCityQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetCityQuery, GetCityQueryVariables>(GetCityDocument, options);
+      }
+export function useGetCityLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCityQuery, GetCityQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetCityQuery, GetCityQueryVariables>(GetCityDocument, options);
+        }
+export type GetCityQueryHookResult = ReturnType<typeof useGetCityQuery>;
+export type GetCityLazyQueryHookResult = ReturnType<typeof useGetCityLazyQuery>;
+export type GetCityQueryResult = Apollo.QueryResult<GetCityQuery, GetCityQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {
@@ -201,11 +258,13 @@ export type CityResolvers<ContextType = any, ParentType extends ResolversParentT
   people?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   planet?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   profit?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   allCities?: Resolver<Array<ResolversTypes['City']>, ParentType, ContextType>;
+  getCity?: Resolver<Maybe<ResolversTypes['City']>, ParentType, ContextType, RequireFields<QueryGetCityArgs, 'slug'>>;
 };
 
 export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {

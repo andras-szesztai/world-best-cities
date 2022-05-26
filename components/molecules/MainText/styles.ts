@@ -12,7 +12,7 @@ export const Container = styled.div`
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
         gap: ${designTokens.space.md}px;
         padding: ${designTokens.space.md}px;
-        padding-bottom: 0px;
+        padding-bottom: ${designTokens.space.sm}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {

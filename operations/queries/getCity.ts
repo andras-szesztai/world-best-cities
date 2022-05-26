@@ -1,10 +1,9 @@
 import { gql } from '@apollo/client'
 
-export const GET_ALL_CITIES = gql`
-    query GetAllCities {
-        allCities {
+export const GET_CITY = gql`
+    query GetCity($slug: String!) {
+        getCity(slug: $slug) {
             name
-            slug
             people
             planet
             profit
