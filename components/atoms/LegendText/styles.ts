@@ -5,7 +5,6 @@ import { Props } from './LegendText'
 
 export const StyledSpan = styled.span<Pick<Props, 'color'>>`
     font-weight: ${designTokens.fontWeight.bold};
-    /* color: ${({ color }) => color}; */
     background-color: ${({ color }) => color};
     border-radius: ${designTokens.borderRadius.md}px;
     border: ${designTokens.strokeWidth.md}px solid ${designTokens.color.black};
