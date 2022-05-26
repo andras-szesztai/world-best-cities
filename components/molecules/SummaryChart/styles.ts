@@ -4,12 +4,18 @@ import { designTokens } from 'styles/designTokens'
 
 export const Container = styled.div`
     position: relative;
-    width: ${designTokens.space['3xl']}px;
-    min-width: ${designTokens.space['3xl']}px;
+    width: ${designTokens.space.xl}px;
+    min-width: ${designTokens.space.xl}px;
+    gap: ${designTokens.space.xxs}px;
     height: 100%;
     display: flex;
     align-items: flex-end;
-    gap: ${designTokens.space.xs}px;
+
+    @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
+        width: ${designTokens.space['3xl']}px;
+        min-width: ${designTokens.space['3xl']}px;
+        gap: ${designTokens.space.xs}px;
+    }
 `
 
 export const Bar = styled.div<{

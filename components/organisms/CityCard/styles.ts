@@ -39,9 +39,13 @@ export const TitleContainer = styled.div`
 `
 
 export const Rank = styled.span`
-    font-size: 3rem;
+    font-size: ${designTokens.fontSize.md};
     line-height: 0.75;
     font-weight: ${designTokens.fontWeight.bold};
+
+    @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
+        font-size: ${designTokens.fontSize.xl};
+    }
 `
 
 export const CardTitle = styled.h2`

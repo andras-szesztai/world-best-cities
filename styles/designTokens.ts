@@ -56,4 +56,9 @@ export const designTokens = {
         md: 400,
         lg: 1000,
     },
+    breakPoints: {
+        sm: 360,
+        md: 720,
+        lg: 1040,
+    },
 } as const
