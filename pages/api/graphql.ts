@@ -2,7 +2,8 @@ import { ApolloServer } from 'apollo-server-micro'
 
 import prisma from 'prisma/prisma'
 import { typeDefs } from 'schemas'
-import { ResolverContext, resolvers } from 'resolvers'
+import { resolvers } from 'resolvers'
+import { ResolverContext } from 'resolvers/Query'
 import { QueryResolvers } from 'types/generated/graphql'
 
 const server = new ApolloServer({

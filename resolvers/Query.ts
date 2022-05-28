@@ -1,6 +1,9 @@
+import { PrismaClient } from '@prisma/client'
 import { QueryResolvers } from 'types/generated/graphql'
 
-import { ResolverContext } from '.'
+export interface ResolverContext {
+    db: PrismaClient
+}
 
 export const Query: QueryResolvers<ResolverContext> = {
     allCities: (_, __, { db }) =>
