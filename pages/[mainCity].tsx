@@ -6,6 +6,7 @@ import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY } from 'operations/queries/getCity'
 import { AllCities, City, FullCity } from 'types/city'
 
+import { slugify } from 'utils/string'
 import { baseURL, client } from './_app'
 
 interface Props {
@@ -15,13 +16,12 @@ interface Props {
 const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    console.log({ baseURL })
     const data = await request<{
         allCities: AllCities
     }>(`${baseURL}/api/graphql`, GET_ALL_CITIES)
     return {
         paths: data.allCities.map((c) => ({
-            params: { mainCity: c.slug },
+            params: { mainCity: slugify(c.name) },
         })),
         fallback: false,
     }
