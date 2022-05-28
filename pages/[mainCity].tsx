@@ -5,6 +5,7 @@ import request from 'graphql-request'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY } from 'operations/queries/getCity'
 import { AllCities, City, FullCity } from 'types/city'
+import { API_URL } from 'constants/api'
 
 interface Props {
     city: City
@@ -15,7 +16,7 @@ const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
 export const getStaticPaths: GetStaticPaths = async () => {
     const data = await request<{
         allCities: AllCities
-    }>('https://world-best-cities.herokuapp.com/', GET_ALL_CITIES)
+    }>(API_URL, GET_ALL_CITIES)
     return {
         paths: data.allCities.map((c) => ({
             params: { mainCity: c.slug },
@@ -33,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const data = await request<{
         getCity: FullCity
     }>({
-        url: 'https://world-best-cities.herokuapp.com/',
+        url: API_URL,
         document: GET_CITY,
         variables: { slug: mainCity },
     })

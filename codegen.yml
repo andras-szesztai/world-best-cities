@@ -1,11 +1,6 @@
 overwrite: true
-schema: 'http://localhost:3000/api/graphql'
-documents: operations/**/*.ts
+schema: 'http://localhost:4000/'
 generates:
     types/generated/graphql.tsx:
         plugins:
             - 'typescript'
-            - 'typescript-operations'
-            - 'typescript-react-apollo'
-            - 'fragment-matcher'
-            - 'typescript-resolvers'

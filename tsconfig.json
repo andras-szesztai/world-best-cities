@@ -18,9 +18,6 @@
     "paths": {
       "styles/*": ["styles/*"],
       "data/*": ["data/*"],
-      "schemas/*": ["schemas/*"],
-      "resolvers/*": ["resolvers/*"],
-      "prisma/*": ["prisma/*"],
       "types/*": ["types/*"],
     }
   },

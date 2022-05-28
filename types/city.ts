@@ -1,11 +1,11 @@
 import { metrics } from 'constants/metric'
 
-import { GetAllCitiesQuery, GetCityQuery } from './generated/graphql'
+import { Query } from './generated/graphql'
 
-export type AllCities = GetAllCitiesQuery['allCities']
+export type AllCities = Query['allCities']
 
 export type FullCity = AllCities[number]
 
-export type City = GetCityQuery['getCity']
+export type City = Query['getCity']
 
 export type CitySummaryChart = Pick<FullCity, typeof metrics[number]>

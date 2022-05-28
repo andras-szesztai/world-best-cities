@@ -10,6 +10,7 @@ import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { AllCities } from 'types/city'
 import { designTokens } from 'styles/designTokens'
+import { API_URL } from 'constants/api'
 
 interface StaticProps {
     allCities: AllCities
@@ -57,7 +58,7 @@ const Home = ({ allCities }: Props) => {
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
     const data = await request<{
         allCities: AllCities
-    }>('https://world-best-cities.herokuapp.com/', GET_ALL_CITIES)
+    }>(API_URL, GET_ALL_CITIES)
     return {
         props: { allCities: data.allCities },
     }
