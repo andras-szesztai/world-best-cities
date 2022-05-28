@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
+import request from 'graphql-request'
 
 import { MainText } from 'components/molecules/MainText'
 import { CityCard } from 'components/organisms/CityCard'
@@ -9,8 +10,6 @@ import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { AllCities } from 'types/city'
 import { designTokens } from 'styles/designTokens'
-
-import { client } from './_app'
 
 interface StaticProps {
     allCities: AllCities
@@ -56,9 +55,9 @@ const Home = ({ allCities }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-    const { data } = await client.query<StaticProps>({
-        query: GET_ALL_CITIES,
-    })
+    const data = await request<{
+        allCities: AllCities
+    }>('https://world-best-cities.herokuapp.com/', GET_ALL_CITIES)
     return {
         props: { allCities: data.allCities },
     }

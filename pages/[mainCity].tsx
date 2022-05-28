@@ -6,9 +6,6 @@ import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY } from 'operations/queries/getCity'
 import { AllCities, City, FullCity } from 'types/city'
 
-import { slugify } from 'utils/string'
-import { baseURL, client } from './_app'
-
 interface Props {
     city: City
 }
@@ -18,10 +15,10 @@ const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
 export const getStaticPaths: GetStaticPaths = async () => {
     const data = await request<{
         allCities: AllCities
-    }>(`${baseURL}/api/graphql`, GET_ALL_CITIES)
+    }>('https://world-best-cities.herokuapp.com/', GET_ALL_CITIES)
     return {
         paths: data.allCities.map((c) => ({
-            params: { mainCity: slugify(c.name) },
+            params: { mainCity: c.slug },
         })),
         fallback: false,
     }
@@ -33,10 +30,11 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const { mainCity } = context.params as IParams
-    const { data } = await client.query<{
+    const data = await request<{
         getCity: FullCity
     }>({
-        query: GET_CITY,
+        url: 'https://world-best-cities.herokuapp.com/',
+        document: GET_CITY,
         variables: { slug: mainCity },
     })
     return { props: { city: data.getCity } }
