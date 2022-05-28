@@ -1,4 +1,3 @@
-import { continents } from 'constants/continent'
 import { metrics } from 'constants/metric'
 
 import { GetAllCitiesQuery, GetCityQuery } from './generated/graphql'

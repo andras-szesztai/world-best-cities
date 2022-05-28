@@ -2,10 +2,11 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
+import { GET_CITY } from 'operations/queries/getCity'
 import { AllCities, City, FullCity } from 'types/city'
 
-import { client } from './_app'
-import { GET_CITY } from 'operations/queries/getCity'
+import request from 'graphql-request'
+import { baseURL, client } from './_app'
 
 interface Props {
     city: City
@@ -14,16 +15,14 @@ interface Props {
 const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const { data } = await client.query<{
+    const data = await request<{
         allCities: AllCities
-    }>({
-        query: GET_ALL_CITIES,
-    })
+    }>(`${baseURL}/api/graphql`, GET_ALL_CITIES)
     return {
         paths: data.allCities.map((c) => ({
             params: { mainCity: c.slug },
         })),
-        fallback: true,
+        fallback: false,
     }
 }
 
