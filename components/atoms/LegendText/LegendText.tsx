@@ -1,9 +1,5 @@
 import { StyledSpan } from './styles'
-
-export interface Props {
-    text: string
-    color: string
-}
+import { Props } from './types'
 
 const LegendText = ({ text, color }: Props) => (
     <StyledSpan color={color}>{text}</StyledSpan>

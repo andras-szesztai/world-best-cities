@@ -1,4 +1,5 @@
 import { pick } from 'lodash'
+import Link from 'next/link'
 
 import { SummaryChart } from 'components/molecules/SummaryChart'
 import { metrics } from 'constants/metric'
@@ -7,7 +8,6 @@ import { Continents } from 'types/continent'
 
 import { Props } from './types'
 import { CardTitle, Container, Rank, TitleContainer } from './styles'
-import Link from 'next/link'
 
 const continentMapper: Record<string, Continents> = {
     'North America': 'northAmerica',

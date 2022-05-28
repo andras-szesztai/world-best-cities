@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
-import { Props } from './LegendText'
+
+import { Props } from './types'
 
 export const StyledSpan = styled.span<Pick<Props, 'color'>>`
     font-weight: ${designTokens.fontWeight.bold};
