@@ -19,6 +19,7 @@ export const designTokens = {
     },
     color: {
         black: '#000000',
+        white: '#ffffff',
         people: '#E8493D',
         planet: '#AB59A3',
         profit: '#12AA5A',

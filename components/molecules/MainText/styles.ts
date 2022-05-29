@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
 
-export const Container = styled.div`
+export const Container = styled.div<{ noBottomPadding: boolean }>`
     display: flex;
     flex-direction: column;
     gap: ${designTokens.space.sm}px;
@@ -12,13 +12,13 @@ export const Container = styled.div`
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
         gap: ${designTokens.space.md}px;
         padding: ${designTokens.space.md}px;
-        padding-bottom: ${designTokens.space.sm}px;
+        padding-bottom: ${({ noBottomPadding }) =>
+            noBottomPadding ? 0 : designTokens.space.sm}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
         padding: ${designTokens.space.lg}px;
         align-items: center;
-        padding-bottom: ${designTokens.space.sm}px;
     }
 `
 
