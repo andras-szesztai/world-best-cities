@@ -28,6 +28,11 @@ export const Container = styled.a<{ color: string }>`
         transform: translateY(-4px);
         outline: none;
     }
+
+    :active {
+        box-shadow: ${designTokens.boxShadow.sm};
+        transform: translateY(2px);
+    }
 `
 
 export const TitleContainer = styled.div`

@@ -2,9 +2,11 @@ import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
 
-export const Container = styled.a<{ color: string }>`
+const CardLink = styled.a<{ color: string }>`
     display: flex;
-    text-align: left;
+    justify-content: center;
+    font-weight: ${designTokens.fontWeight.bold};
+    font-size: ${designTokens.fontSize.base};
     cursor: pointer;
 
     background-color: ${({ color }) => color};
@@ -33,17 +35,4 @@ export const Container = styled.a<{ color: string }>`
     }
 `
 
-export const Rank = styled.span`
-    font-size: ${designTokens.fontSize.base};
-    font-weight: ${designTokens.fontWeight.bold};
-
-    @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
-        font-size: ${designTokens.fontSize.base};
-    }
-`
-
-export const CardTitle = styled.h3`
-    font-size: ${designTokens.fontSize.base};
-    font-weight: ${designTokens.fontWeight.regular};
-    margin: 0;
-`
+export default CardLink

@@ -37,6 +37,7 @@ export const designTokens = {
         lg: 8,
     },
     boxShadow: {
+        xs: '2px 2px 0px 0px #000',
         sm: '4px 4px 0px 0px #000',
         md: '8px 8px 0px 0px #000',
         lg: '12px 12px 0px 0px #000',
