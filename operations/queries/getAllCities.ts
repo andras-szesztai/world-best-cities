@@ -17,7 +17,7 @@ export const GET_ALL_CITIES = gql`
 
 export const GET_ALL_CITIES_LIMITED = gql`
     query GetAllCitiesLimited {
-        allCitiesLimited {
+        allCities {
             name
             slug
             overall

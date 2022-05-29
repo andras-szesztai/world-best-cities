@@ -3,24 +3,27 @@ import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
 import Head from 'next/head'
 
+import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
 import { CityPageContainer } from 'components/atoms/CityPageContainer'
-import { MetricRank } from 'components/molecules/MetricRank'
-import { MainText } from 'components/molecules/MainText'
 import { LegendText } from 'components/atoms/LegendText'
 import { Subtitle } from 'components/atoms/Subtitle'
+import { MetricRank } from 'components/molecules/MetricRank'
+import { MainText } from 'components/molecules/MainText'
+import { SmallCityCard } from 'components/organisms/SmallCityCard'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
-import { GET_CITY } from 'operations/queries/getCity'
+import { GET_CITY_AND_LIMITED_ALL_CITIES } from 'operations/queries/getCity'
 import { continentMapper } from 'constants/continent'
-import { AllCities, City, FullCity } from 'types/city'
+import { AllCities, City, LimitedCity } from 'types/city'
 import { designTokens } from 'styles/designTokens'
 import { API_URL } from 'constants/api'
 import { metrics } from 'constants/metric'
 
 interface Props {
     city: City
+    compareCities: LimitedCity[]
 }
 
-const MainCityPage = ({ city }: Props) => (
+const MainCityPage = ({ city, compareCities }: Props) => (
     <>
         <Head>
             <title>{city?.name} - People | Planet | Profit</title>
@@ -61,7 +64,12 @@ const MainCityPage = ({ city }: Props) => (
                             metric={metric}
                         />
                     ))}
-                    <Subtitle>Compare to</Subtitle>
+                    <Subtitle>Compare to:</Subtitle>
+                    <CityCardsContainer>
+                        {compareCities.map((c) => (
+                            <SmallCityCard key={c.name} city={c} />
+                        ))}
+                    </CityCardsContainer>
                 </>
             )}
         </CityPageContainer>
@@ -84,19 +92,21 @@ interface IParams extends ParsedUrlQuery {
     mainCity: string
 }
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-    const { mainCity } = context.params as IParams
+export const getStaticProps: GetStaticProps<Props, IParams> = async (
+    context
+) => {
+    const { mainCity } = context.params!
     const data = await request<{
-        getCity: FullCity
+        getCity: Props['city']
+        allCities: Props['compareCities']
     }>({
         url: API_URL,
-        document: GET_CITY,
+        document: GET_CITY_AND_LIMITED_ALL_CITIES,
         variables: { slug: mainCity },
     })
-    // const allCitiesData = await request<{
-    //     allCities: AllCities
-    // }>(API_URL, GET_ALL_CITIES_LIMITED)
-    return { props: { city: data.getCity } }
+    return {
+        props: { city: data.getCity, compareCities: data.allCities },
+    }
 }
 
 export default MainCityPage
