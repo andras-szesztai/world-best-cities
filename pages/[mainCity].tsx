@@ -5,19 +5,14 @@ import Head from 'next/head'
 
 import { CompareCitiesContainer } from 'components/atoms/CompareCitiesContainer'
 import { CityPageContainer } from 'components/atoms/CityPageContainer'
-import { LegendText } from 'components/atoms/LegendText'
 import { Subtitle } from 'components/atoms/Subtitle'
-import { MetricRank } from 'components/molecules/MetricRank'
-import { MainText } from 'components/molecules/MainText'
 import { SmallCityCard } from 'components/organisms/SmallCityCard'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY_AND_LIMITED_ALL_CITIES } from 'operations/queries/getCity'
-import { continentMapper } from 'constants/continent'
-import { metrics } from 'constants/metric'
 import { API_URL } from 'constants/api'
 import { AllCities, City, LimitedCity } from 'types/city'
-import { designTokens } from 'styles/designTokens'
 import { CompareCitiesSelectorContainer } from 'components/atoms/CompareCitiesSelectorContainer'
+import { CityDetails } from 'components/templates/CityDetails'
 
 interface Props {
     city: City
@@ -35,36 +30,7 @@ const MainCityPage = ({ city, compareCities }: Props) => (
             )}
             {city && (
                 <>
-                    <MainText
-                        title={
-                            <LegendText
-                                text={city.name}
-                                color={
-                                    designTokens.color[
-                                        continentMapper[city.continent]
-                                    ]
-                                }
-                            />
-                        }
-                        subTitle={
-                            <div>
-                                is ranked{' '}
-                                <LegendText
-                                    text={`#${city.overall}`}
-                                    color={designTokens.color.white}
-                                />{' '}
-                                of 100 cities
-                            </div>
-                        }
-                        noMarginBottom
-                    />
-                    {metrics.map((metric) => (
-                        <MetricRank
-                            key={`${city.name}${metric}`}
-                            rank={city[metric]}
-                            metric={metric}
-                        />
-                    ))}
+                    <CityDetails city={city} isContextText />
                     <CompareCitiesSelectorContainer>
                         <Subtitle>Compare to</Subtitle>
                         <CompareCitiesContainer>
