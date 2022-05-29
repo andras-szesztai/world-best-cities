@@ -1,21 +1,24 @@
 import { ReactNode } from 'react'
-import { Container, SubTitle, Title } from './styles'
+
+import { Subtitle } from 'components/atoms/Subtitle'
+
+import { Container, Title } from './styles'
 
 interface Props {
     title: ReactNode
     subTitle: ReactNode
-    noBottomPadding?: boolean
+    noMarginBottom?: boolean
 }
 
-const MainText = ({ title, subTitle, noBottomPadding }: Props) => (
-    <Container noBottomPadding={noBottomPadding!}>
+const MainText = ({ title, subTitle, noMarginBottom }: Props) => (
+    <Container noMarginBottom={noMarginBottom}>
         <Title>{title}</Title>
-        <SubTitle>{subTitle}</SubTitle>
+        <Subtitle>{subTitle}</Subtitle>
     </Container>
 )
 
 MainText.defaultProps = {
-    noBottomPadding: false,
+    noMarginBottom: false,
 }
 
 export default MainText

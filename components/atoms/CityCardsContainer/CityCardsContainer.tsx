@@ -6,11 +6,9 @@ const CityCardsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: ${designTokens.space.base}px;
-    padding: ${designTokens.space.sm}px;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
         gap: ${designTokens.space.md}px;
-        padding: ${designTokens.space.md}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.md}px) {

@@ -2,23 +2,23 @@ import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
 
-export const Container = styled.div<{ noBottomPadding: boolean }>`
+export const Container = styled.div<{ noMarginBottom?: boolean }>`
     display: flex;
     flex-direction: column;
     gap: ${designTokens.space.sm}px;
-    padding: ${designTokens.space.sm}px;
-    padding-bottom: 0px;
+    margin-bottom: ${({ noMarginBottom }) =>
+        noMarginBottom ? 0 : designTokens.space.md}px;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
         gap: ${designTokens.space.md}px;
-        padding: ${designTokens.space.md}px;
-        padding-bottom: ${({ noBottomPadding }) =>
-            noBottomPadding ? 0 : designTokens.space.sm}px;
+        margin-bottom: ${({ noMarginBottom }) =>
+            noMarginBottom ? 0 : designTokens.space.lg}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
-        padding: ${designTokens.space.lg}px;
         align-items: center;
+        margin-bottom: ${({ noMarginBottom }) =>
+            noMarginBottom ? 0 : designTokens.space.xl}px;
     }
 `
 
@@ -33,17 +33,6 @@ export const Title = styled.h1`
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
-        line-height: 1.4;
-    }
-`
-
-export const SubTitle = styled.h2`
-    line-height: 1.9;
-    font-size: ${designTokens.fontSize.md};
-    margin: 0;
-    font-weight: ${designTokens.fontWeight.regular};
-
-    @media only screen and (min-width: ${designTokens.breakPoints.md}px) {
         line-height: 1.4;
     }
 `

@@ -7,6 +7,7 @@ import { CityPageContainer } from 'components/atoms/CityPageContainer'
 import { MetricRank } from 'components/molecules/MetricRank'
 import { MainText } from 'components/molecules/MainText'
 import { LegendText } from 'components/atoms/LegendText'
+import { Subtitle } from 'components/atoms/Subtitle'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY } from 'operations/queries/getCity'
 import { continentMapper } from 'constants/continent'
@@ -48,10 +49,10 @@ const MainCityPage = ({ city }: Props) => (
                                     text={`#${city.overall}`}
                                     color={designTokens.color.white}
                                 />{' '}
-                                of the 100 cities
+                                of 100 cities
                             </div>
                         }
-                        noBottomPadding
+                        noMarginBottom
                     />
                     {metrics.map((metric) => (
                         <MetricRank
@@ -60,6 +61,7 @@ const MainCityPage = ({ city }: Props) => (
                             metric={metric}
                         />
                     ))}
+                    <Subtitle>Compare to</Subtitle>
                 </>
             )}
         </CityPageContainer>
@@ -82,7 +84,7 @@ interface IParams extends ParsedUrlQuery {
     mainCity: string
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
     const { mainCity } = context.params as IParams
     const data = await request<{
         getCity: FullCity
@@ -91,6 +93,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         document: GET_CITY,
         variables: { slug: mainCity },
     })
+    // const allCitiesData = await request<{
+    //     allCities: AllCities
+    // }>(API_URL, GET_ALL_CITIES_LIMITED)
     return { props: { city: data.getCity } }
 }
 
