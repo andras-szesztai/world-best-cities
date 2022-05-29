@@ -33,9 +33,9 @@ const MainCityPage = ({ mainCity, compareCity }: Props) => (
             {mainCity && compareCity && (
                 <>
                     <CityDetails city={mainCity} />
-                    <span />
+                    <br />
                     <CityDetails city={compareCity} />
-                    <span />
+                    <br />
                     <Link href={`/${mainCity.slug}`} passHref>
                         <CardLink color={designTokens.color.white}>
                             Back
