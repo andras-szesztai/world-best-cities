@@ -23,12 +23,13 @@ export const Container = styled.div<{ noMarginBottom?: boolean }>`
 `
 
 export const Title = styled.h1`
-    font-size: ${designTokens.fontSize.xl};
+    font-size: ${designTokens.fontSize.lg};
     margin: 0;
     font-weight: ${designTokens.fontWeight.bold};
     line-height: 1.1;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
+        font-size: ${designTokens.fontSize.xl};
         line-height: 1.2;
     }
 
