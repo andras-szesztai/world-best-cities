@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
 import Head from 'next/head'
 
-import { CityCardsContainer } from 'components/atoms/CityCardsContainer'
+import { CompareCitiesContainer } from 'components/atoms/CompareCitiesContainer'
 import { CityPageContainer } from 'components/atoms/CityPageContainer'
 import { LegendText } from 'components/atoms/LegendText'
 import { Subtitle } from 'components/atoms/Subtitle'
@@ -13,10 +13,11 @@ import { SmallCityCard } from 'components/organisms/SmallCityCard'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY_AND_LIMITED_ALL_CITIES } from 'operations/queries/getCity'
 import { continentMapper } from 'constants/continent'
+import { metrics } from 'constants/metric'
+import { API_URL } from 'constants/api'
 import { AllCities, City, LimitedCity } from 'types/city'
 import { designTokens } from 'styles/designTokens'
-import { API_URL } from 'constants/api'
-import { metrics } from 'constants/metric'
+import { CompareCitiesSelectorContainer } from 'components/atoms/CompareCitiesSelectorContainer'
 
 interface Props {
     city: City
@@ -64,12 +65,20 @@ const MainCityPage = ({ city, compareCities }: Props) => (
                             metric={metric}
                         />
                     ))}
-                    <Subtitle>Compare to:</Subtitle>
-                    <CityCardsContainer>
-                        {compareCities.map((c) => (
-                            <SmallCityCard key={c.name} city={c} />
-                        ))}
-                    </CityCardsContainer>
+                    <CompareCitiesSelectorContainer>
+                        <Subtitle>Compare to</Subtitle>
+                        <CompareCitiesContainer>
+                            {compareCities
+                                .filter((c) => c.name !== city.name)
+                                .map((c) => (
+                                    <SmallCityCard
+                                        key={c.name}
+                                        mainCitySlug={city.slug}
+                                        city={c}
+                                    />
+                                ))}
+                        </CompareCitiesContainer>
+                    </CompareCitiesSelectorContainer>
                 </>
             )}
         </CityPageContainer>

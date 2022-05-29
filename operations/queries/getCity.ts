@@ -4,6 +4,7 @@ export const GET_CITY = gql`
     query GetCity($slug: String!) {
         getCity(slug: $slug) {
             name
+            slug
             people
             planet
             profit
@@ -18,6 +19,7 @@ export const GET_CITY_AND_LIMITED_ALL_CITIES = gql`
     query GetCity($slug: String!) {
         getCity(slug: $slug) {
             name
+            slug
             people
             planet
             profit

@@ -7,18 +7,18 @@ export const Container = styled.div<{ noMarginBottom?: boolean }>`
     flex-direction: column;
     gap: ${designTokens.space.sm}px;
     margin-bottom: ${({ noMarginBottom }) =>
-        noMarginBottom ? 0 : designTokens.space.md}px;
+        noMarginBottom ? 0 : designTokens.space.sm}px;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
-        gap: ${designTokens.space.md}px;
+        gap: ${designTokens.space.base}px;
         margin-bottom: ${({ noMarginBottom }) =>
-            noMarginBottom ? 0 : designTokens.space.lg}px;
+            noMarginBottom ? 0 : designTokens.space.base}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
         align-items: center;
         margin-bottom: ${({ noMarginBottom }) =>
-            noMarginBottom ? 0 : designTokens.space.xl}px;
+            noMarginBottom ? 0 : designTokens.space.lg}px;
     }
 `
 
