@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import request from 'graphql-request'
@@ -21,7 +20,7 @@ const Home = ({ allCities }: Props) => {
     return (
         <>
             <Head>
-                <title>World's Best Cities</title>
+                <title>World&apos;s Best Cities</title>
             </Head>
             <MainText
                 title="World's Best Cities"

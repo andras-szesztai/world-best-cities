@@ -17,7 +17,6 @@
     "baseUrl": ".",
     "paths": {
       "styles/*": ["styles/*"],
-      "data/*": ["data/*"],
       "types/*": ["types/*"],
     }
   },

@@ -1,17 +1,49 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
+import Head from 'next/head'
 
+import { CityPageContainer } from 'components/atoms/CityPageContainer'
+import { MainText } from 'components/molecules/MainText'
+import { LegendText } from 'components/atoms/LegendText'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY } from 'operations/queries/getCity'
+import { continentMapper } from 'constants/continent'
 import { AllCities, City, FullCity } from 'types/city'
+import { designTokens } from 'styles/designTokens'
 import { API_URL } from 'constants/api'
 
 interface Props {
     city: City
 }
 
-const MainCityPage = ({ city }: Props) => <div>{city?.name}</div>
+const MainCityPage = ({ city }: Props) => (
+    <>
+        <Head>
+            <title>{city?.name} - People | Planet | Profit</title>
+        </Head>
+        <CityPageContainer>
+            {!city && (
+                <span>Sorry, we have no city such city in the database</span>
+            )}
+            {city && (
+                <MainText
+                    title={
+                        <LegendText
+                            text={city.name}
+                            color={
+                                designTokens.color[
+                                    continentMapper[city.continent]
+                                ]
+                            }
+                        />
+                    }
+                    subTitle={`is ranked #${city.overall} of the 100 cities`}
+                />
+            )}
+        </CityPageContainer>
+    </>
+)
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const data = await request<{

@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Container, SubTitle, Title } from './styles'
 
 interface Props {
-    title: string
+    title: ReactNode
     subTitle: ReactNode
 }
 
