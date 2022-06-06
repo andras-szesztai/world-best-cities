@@ -22,10 +22,6 @@ const CompareCitiesContainer = styled.div`
         gap: ${designTokens.space.md}px;
         max-height: ${designTokens.space['5xl']}px;
     }
-
-    @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
-        gap: ${designTokens.space.lg}px;
-    }
 `
 
 export default CompareCitiesContainer

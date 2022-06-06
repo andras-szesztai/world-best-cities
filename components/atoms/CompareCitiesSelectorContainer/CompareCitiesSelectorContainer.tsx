@@ -17,9 +17,13 @@ const CompareCitiesContainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        gap: ${designTokens.space.lg}px;
+        gap: ${designTokens.space.md}px;
         bottom: 0px;
         width: 100%;
+    }
+
+    @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
+        gap: ${designTokens.space.lg}px;
     }
 `
 

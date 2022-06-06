@@ -2,13 +2,13 @@ import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
 
-export const Container = styled.a<{ color: string }>`
+export const Container = styled.a`
     display: flex;
-    align-items: center;
-    text-align: left;
     cursor: pointer;
 
-    background-color: ${({ color }) => color};
+    color: ${designTokens.color.black};
+    background-color: ${designTokens.color.white};
+    justify-self: flex-start;
 
     padding: ${designTokens.space.xs}px;
     gap: ${designTokens.space.xs}px;
@@ -16,12 +16,10 @@ export const Container = styled.a<{ color: string }>`
     border: ${designTokens.strokeWidth.lg}px solid ${designTokens.color.black};
     box-shadow: ${designTokens.boxShadow.sm};
     transition: all ${designTokens.duration.sm}ms;
-    font-size: ${designTokens.fontSize.base};
 
     @media only screen and (min-width: ${designTokens.breakPoints.md}px) {
         padding: ${designTokens.space.sm}px;
         gap: ${designTokens.space.sm}px;
-        font-size: ${designTokens.fontSize.md};
     }
 
     :hover {
@@ -41,13 +39,9 @@ export const Container = styled.a<{ color: string }>`
     }
 `
 
-export const Rank = styled.span`
-    font-weight: ${designTokens.fontWeight.bold};
-`
-
 export const CardTitle = styled.h3`
     font-size: ${designTokens.fontSize.base};
-    font-weight: ${designTokens.fontWeight.regular};
+    font-weight: ${designTokens.fontWeight.bold};
     margin: 0;
 
     @media only screen and (min-width: ${designTokens.breakPoints.md}px) {

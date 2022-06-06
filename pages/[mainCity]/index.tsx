@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
 import Head from 'next/head'
 
+import { BackButton } from 'components/organisms/BackButton'
 import { CompareCitiesSelectorContainer } from 'components/atoms/CompareCitiesSelectorContainer'
 import { CityDetails } from 'components/templates/CityDetails'
 import { CityMetricsContainer } from 'components/atoms/CityMetricsContainer'
@@ -46,6 +47,7 @@ const MainCityPage = ({ city, compareCities }: Props) => (
                                 ))}
                         </CompareCitiesContainer>
                     </CompareCitiesSelectorContainer>
+                    <BackButton href="/" />
                 </CityMetricsContainer>
             )}
         </CityPageContainer>
