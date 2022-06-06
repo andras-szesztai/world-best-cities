@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { designTokens } from 'styles/designTokens'
 
 const CompareCitiesContainer = styled.div`
-    max-height: ${designTokens.space['4xl']}px;
+    max-height: ${designTokens.space['3xl']}px;
     overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -13,6 +13,7 @@ const CompareCitiesContainer = styled.div`
     gap: ${designTokens.space.sm}px;
 
     @media only screen and (min-width: ${designTokens.breakPoints.sm}px) {
+        max-height: ${designTokens.space['4xl']}px;
         padding: ${designTokens.space.base}px;
         gap: ${designTokens.space.base}px;
     }

@@ -27,9 +27,6 @@ const MainCityPage = ({ city, compareCities }: Props) => (
             <title>{city?.name} - People | Planet | Profit</title>
         </Head>
         <CityPageContainer>
-            {!city && (
-                <span>Sorry, we have no city such city in the database</span>
-            )}
             {city && (
                 <CityMetricsContainer>
                     <CityDetails city={city} isContextText />

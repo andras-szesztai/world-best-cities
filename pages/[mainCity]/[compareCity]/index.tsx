@@ -2,16 +2,15 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
 import Head from 'next/head'
-import Link from 'next/link'
 
+import { CityMetricsContainer } from 'components/atoms/CityMetricsContainer'
 import { CityPageContainer } from 'components/atoms/CityPageContainer'
 import { CityDetails } from 'components/templates/CityDetails'
-import { CardLink } from 'components/atoms/CardLink'
 import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
+import { BackButton } from 'components/organisms/BackButton'
 import { GET_CITY } from 'operations/queries/getCity'
 import { API_URL } from 'constants/api'
 import { AllCities, City } from 'types/city'
-import { designTokens } from 'styles/designTokens'
 
 interface Props {
     mainCity: City
@@ -27,21 +26,15 @@ const MainCityPage = ({ mainCity, compareCity }: Props) => (
             </title>
         </Head>
         <CityPageContainer>
-            {!mainCity && (
+            {!(mainCity || compareCity) && (
                 <span>Sorry, we have no city such city in the database</span>
             )}
             {mainCity && compareCity && (
-                <>
+                <CityMetricsContainer>
                     <CityDetails city={mainCity} />
-                    <br />
                     <CityDetails city={compareCity} />
-                    <br />
-                    <Link href={`/${mainCity.slug}`} passHref>
-                        <CardLink color={designTokens.color.white}>
-                            Back
-                        </CardLink>
-                    </Link>
-                </>
+                    <BackButton href={`/${mainCity.slug}`} />
+                </CityMetricsContainer>
             )}
         </CityPageContainer>
     </>

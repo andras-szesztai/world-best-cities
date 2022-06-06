@@ -40,11 +40,7 @@ export const Container = styled.a`
 `
 
 export const CardTitle = styled.h3`
-    font-size: ${designTokens.fontSize.base};
+    font-size: ${designTokens.fontSize.md};
     font-weight: ${designTokens.fontWeight.bold};
     margin: 0;
-
-    @media only screen and (min-width: ${designTokens.breakPoints.md}px) {
-        font-size: ${designTokens.fontSize.md};
-    }
 `
