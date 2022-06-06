@@ -20,6 +20,7 @@ const CompareCitiesContainer = styled.div`
     @media only screen and (min-width: ${designTokens.breakPoints.md}px) {
         padding: ${designTokens.space.md}px;
         gap: ${designTokens.space.md}px;
+        max-height: ${designTokens.space['5xl']}px;
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {

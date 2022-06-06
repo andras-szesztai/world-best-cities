@@ -6,14 +6,17 @@ import { metrics } from 'constants/metric'
 import { FullCity } from 'types/city'
 import { designTokens } from 'styles/designTokens'
 
+import Container from './styles'
+
 interface Props {
     city: FullCity
     isContextText?: boolean
 }
 
 const CityDetails = ({ city, isContextText }: Props) => (
-    <>
+    <Container>
         <MainText
+            alignItems="flex-start"
             title={
                 <LegendText
                     text={city.name}
@@ -39,7 +42,7 @@ const CityDetails = ({ city, isContextText }: Props) => (
                 metric={metric}
             />
         ))}
-    </>
+    </Container>
 )
 
 CityDetails.defaultProps = {

@@ -3,6 +3,9 @@ import { ParsedUrlQuery } from 'querystring'
 import request from 'graphql-request'
 import Head from 'next/head'
 
+import { CompareCitiesSelectorContainer } from 'components/atoms/CompareCitiesSelectorContainer'
+import { CityDetails } from 'components/templates/CityDetails'
+import { CityMetricsContainer } from 'components/atoms/CityMetricsContainer'
 import { CompareCitiesContainer } from 'components/atoms/CompareCitiesContainer'
 import { CityPageContainer } from 'components/atoms/CityPageContainer'
 import { Subtitle } from 'components/atoms/Subtitle'
@@ -11,8 +14,6 @@ import { GET_ALL_CITIES } from 'operations/queries/getAllCities'
 import { GET_CITY_AND_LIMITED_ALL_CITIES } from 'operations/queries/getCity'
 import { API_URL } from 'constants/api'
 import { AllCities, City, LimitedCity } from 'types/city'
-import { CompareCitiesSelectorContainer } from 'components/atoms/CompareCitiesSelectorContainer'
-import { CityDetails } from 'components/templates/CityDetails'
 
 interface Props {
     city: City
@@ -29,7 +30,7 @@ const MainCityPage = ({ city, compareCities }: Props) => (
                 <span>Sorry, we have no city such city in the database</span>
             )}
             {city && (
-                <>
+                <CityMetricsContainer>
                     <CityDetails city={city} isContextText />
                     <CompareCitiesSelectorContainer>
                         <Subtitle>Compare to</Subtitle>
@@ -45,7 +46,7 @@ const MainCityPage = ({ city, compareCities }: Props) => (
                                 ))}
                         </CompareCitiesContainer>
                     </CompareCitiesSelectorContainer>
-                </>
+                </CityMetricsContainer>
             )}
         </CityPageContainer>
     </>

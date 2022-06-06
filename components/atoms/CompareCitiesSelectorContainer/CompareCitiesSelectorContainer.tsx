@@ -13,9 +13,13 @@ const CompareCitiesContainer = styled.div`
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.md}px) {
-    }
-
-    @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: ${designTokens.space.lg}px;
+        bottom: 0px;
+        width: 100%;
     }
 `
 

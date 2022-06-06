@@ -2,9 +2,13 @@ import styled from '@emotion/styled'
 
 import { designTokens } from 'styles/designTokens'
 
-export const Container = styled.div<{ noMarginBottom?: boolean }>`
+export const Container = styled.div<{
+    noMarginBottom?: boolean
+    alignItems?: 'flex-start' | 'center'
+}>`
     display: flex;
     flex-direction: column;
+    align-items: ${({ alignItems }) => alignItems};
     gap: ${designTokens.space.sm}px;
     margin-bottom: ${({ noMarginBottom }) =>
         noMarginBottom ? 0 : designTokens.space.sm}px;
@@ -16,7 +20,6 @@ export const Container = styled.div<{ noMarginBottom?: boolean }>`
     }
 
     @media only screen and (min-width: ${designTokens.breakPoints.lg}px) {
-        align-items: center;
         margin-bottom: ${({ noMarginBottom }) =>
             noMarginBottom ? 0 : designTokens.space.lg}px;
     }
